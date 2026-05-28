@@ -8,9 +8,9 @@ import "./App.css";
 
 function App() {
   return (
-
     <RoadmapProvider>
       <BrowserRouter>
+
         <Navbar />
         <div className="app-container">
           <Routes>
