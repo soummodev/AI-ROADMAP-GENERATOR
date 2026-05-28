@@ -14,7 +14,7 @@ function Hero() {
       <p className="hero-sub">
         Choose your goal, skill level, and timeline.
         <br />
-        Get a detailed, structured roadmap — no AI API needed.
+        Get a detailed, structured roadmap .
       </p>
       <div className="hero-stats">
         <div className="stat">
@@ -31,7 +31,7 @@ function Hero() {
         </div>
         <div className="stat">
           <strong>100%</strong>
-          <span>Offline — No API</span>
+          <span>Offline</span>
         </div>
       </div>
 

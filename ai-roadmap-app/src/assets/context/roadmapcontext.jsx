@@ -1,11 +1,20 @@
 import { useState } from "react";
 import useLocalStorage from "../hooks/localstorage.js";
-import { RoadmapContext } from "./roadmap-context";
+import { RoadmapContext } from "./roadmap-context.js";
 
 function cloneRoadmap(roadmap) {
   if (!roadmap) return null;
   return structuredClone(roadmap);
 }
+
+import { useContext } from "react";
+
+export function useRoadmap() {
+  const ctx = useContext(RoadmapContext);
+  if (!ctx) throw new Error("useRoadmap must be used inside RoadmapProvider");
+  return ctx;
+}
+
 
 export function RoadmapProvider({ children }) {
   const [currentRoadmap, setCurrentRoadmap] = useState(null);
@@ -36,8 +45,7 @@ export function RoadmapProvider({ children }) {
     setHistory([]);
   }
 
-  function loadFromHistory(id) {
-    const entry = history.find((h) => h.id === id);
+  function loadFromHistory(entry) {
     if (!entry) return;
     setCurrentRoadmap(cloneRoadmap(entry.roadmap));
     setCurrentForm(entry.formData);
@@ -90,3 +98,6 @@ export function RoadmapProvider({ children }) {
     </RoadmapContext.Provider>
   );
 }
+
+
+

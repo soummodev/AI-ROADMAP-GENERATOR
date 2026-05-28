@@ -1,4 +1,4 @@
-import { useRoadmap } from "../context/roadmapcontext.jsx           ";
+import { useRoadmap } from "../context/roadmapcontext.jsx";
 
 function SearchBar({ placeholder = "Search skills, phases, projects..." }) {
   const { searchTerm, setSearchTerm } = useRoadmap();
